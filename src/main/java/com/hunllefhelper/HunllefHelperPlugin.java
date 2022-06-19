@@ -26,6 +26,7 @@ import net.runelite.api.Client;
 import net.runelite.api.Player;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.GameTick;
+import net.runelite.api.events.HitsplatApplied;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ConfigChanged;
@@ -91,6 +92,16 @@ public class HunllefHelperPlugin extends Plugin {
         panel = null;
         navigationButton = null;
         audioPlayer.unloadAudio();
+    }
+
+    @Subscribe
+    public void onHitsplatApplied(HitsplatApplied hitsplatApplied) {
+        Player player = client.getLocalPlayer();
+
+        if (hitsplatApplied.getActor() == player) {
+
+        }
+
     }
 
     @Subscribe

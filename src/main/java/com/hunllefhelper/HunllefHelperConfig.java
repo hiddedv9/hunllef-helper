@@ -25,4 +25,12 @@ public interface HunllefHelperConfig extends Config {
     default AudioMode audioMode() {
         return AudioMode.Default;
     }
+
+    @ConfigItem(
+            position = 3,
+            keyName = "autoStart",
+            name = "Start automatically",
+            description = "Start the counter automatically after the Hunllef's first attack hits you."
+    )
+    default boolean autoStart() { return true; }
 }
